@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <title>Página No Encontrada - Runaway Chicken Argentina</title>
+    <link rel="stylesheet" href="style.css">
+   
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Oops! La página que buscás no existe. Volvé al juego más divertido de Argentina.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <style>
+        /* 404 Page Specific Styles */
+        .error-404-section {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .error-404-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Animated 404 Number */
+        .error-404-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            font-size: 120px;
+            font-weight: bold;
+            color: #FF6B35;
+            text-shadow: 4px 4px 8px rgba(255, 107, 53, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .error-404-number {
+                font-size: 80px;
+            }
+        }
+
+        .digit-4, .digit-0 {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .bounce-1 {
+            animation: bounce404-1 2s infinite;
+        }
+
+        .bounce-2 {
+            animation: bounce404-2 2s infinite 0.3s;
+        }
+
+        .bounce-3 {
+            animation: bounce404-3 2s infinite 0.6s;
+        }
+
+        @keyframes bounce404-1 {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(3deg); }
+        }
+
+        @keyframes bounce404-2 {
+            0%, 100% { transform: translateY(0) scale(1); }
+            25% { transform: translateY(-15px) scale(1.1); }
+            50% { transform: translateY(0) scale(0.95); }
+            75% { transform: translateY(-8px) scale(1.05); }
+        }
+
+        @keyframes bounce404-3 {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(-3deg); }
+        }
+
+        .chicken-icon {
+            font-size: 100px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            display: inline-block;
+        }
+
+        .chicken-icon:hover {
+            transform: scale(1.2) rotate(15deg);
+        }
+
+        /* Error Content */
+        .error-404-content {
+            margin-bottom: 50px;
+        }
+
+        .error-404-title {
+            font-size: 42px;
+            color: #FF6B35;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .error-404-title {
+                font-size: 28px;
+            }
+        }
+
+        .error-404-subtitle {
+            font-size: 20px;
+            color: #2C1810;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .error-404-subtitle {
+                font-size: 18px;
+            }
+        }
+
+        /* Navigation Buttons */
+        .error-404-navigation {
+            margin-bottom: 50px;
+        }
+
+        .error-404-navigation h3 {
+            font-size: 24px;
+            color: #FF6B35;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .error-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .error-nav-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 15px;
+            background: linear-gradient(135deg, #fff, #f8f9ff);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #2C1810;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+        }
+
+        .error-nav-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: rgba(255, 107, 53, 0.4);
+        }
+
+        .error-nav-btn .btn-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        .error-nav-btn span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FF6B35;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .error-nav-btn small {
+            font-size: 12px;
+            color: #666;
+            text-transform: none;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Specific button colors */
+        .home-btn:hover { border-color: rgba(52, 152, 219, 0.6); }
+        .game-btn:hover { border-color: rgba(155, 89, 182, 0.6); }
+        .play-btn:hover { border-color: rgba(46, 204, 113, 0.6); }
+        .news-btn:hover { border-color: rgba(241, 196, 15, 0.6); }
+
+        /* Search Section */
+        .error-404-search {
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .error-404-search h4 {
+            font-size: 20px;
+            color: #FF6B35;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                flex-direction: column;
+            }
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .search-input:focus {
+            border-color: #FF6B35;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+        }
+
+        .search-btn {
+            padding: 15px 25px;
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .search-btn:hover {
+            background: linear-gradient(45deg, #F7931E, #FFD23F);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .search-suggestions {
+            text-align: center;
+        }
+
+        .search-suggestions p {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .suggestion-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 15px;
+            background: linear-gradient(45deg, #98FB98, #90EE90);
+            color: #2C1810;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .tag:hover {
+            background: linear-gradient(45deg, #32CD32, #98FB98);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
+        }
+
+        /* Mini Game */
+        .error-404-game {
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #E6E6FA, #DDA0DD);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(221, 160, 221, 0.3);
+            border: 3px solid rgba(186, 85, 211, 0.3);
+        }
+
+        .error-404-game h4 {
+            font-size: 20px;
+            color: #8B008B;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .error-404-game p {
+            margin-bottom: 20px;
+            color: #2C1810;
+            font-size: 16px;
+        }
+
+        .mini-game-container {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #87CEEB, #B0E0E6);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid #4682B4;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .mini-chicken {
+            position: absolute;
+            bottom: 0px;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            user-select: none;
+        }
+
+        .mini-chicken:hover {
+            transform: scale(1.1);
+        }
+
+        .mini-obstacle {
+            position: absolute;
+            bottom: 0px;
+            left: 300px;
+            font-size: 25px;
+            user-select: none;
+        }
+
+        .mini-score {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-weight: bold;
+            color: #2C1810;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .mini-game-btn {
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .mini-game-btn:hover {
+            background: linear-gradient(45deg, #2ecc71, #58d68d);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        /* Argentina Section */
+        .error-404-argentina {
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #74ACDF, #FFF, #74ACDF);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(116, 172, 223, 0.3);
+            border: 3px solid #FFD700;
+        }
+
+        .argentina-flag {
+            font-size: 50px;
+            margin-bottom: 15px;
+            animation: flagWave 3s ease-in-out infinite;
+        }
+
+        @keyframes flagWave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        .error-404-argentina p {
+            color: #2C1810;
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Social Media Links */
+        .error-404-social {
+            margin-bottom: 30px;
+        }
+
+        .error-404-social p {
+            font-size: 16px;
+            color: #2C1810;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .social-links-404 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-404-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            text-decoration: none;
+            color: #2C1810;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .social-404-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .social-404-btn.youtube:hover { border-color: #FF0000; background: rgba(255, 0, 0, 0.1); }
+        .social-404-btn.facebook:hover { border-color: #1877F2; background: rgba(24, 119, 242, 0.1); }
+        .social-404-btn.instagram:hover { border-color: #E4405F; background: rgba(228, 64, 95, 0.1); }
+        .social-404-btn.tiktok:hover { border-color: #000000; background: rgba(0, 0, 0, 0.1); }
+
+        /* Basic body styling */
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #87CEEB, #98FB98, #FFA500, #DDA0DD);
+            background-size: 400% 400%;
+            animation: sweetGradient 15s ease-in-out infinite;
+            margin: 0;
+            padding: 20px;
+            color: #2C1810;
+        }
+
+        @keyframes sweetGradient {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Basic responsive */
+        @media (max-width: 768px) {
+            .error-404-section {
+                padding: 40px 0;
+                margin: 10px;
+            }
+            
+            .error-nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .error-nav-btn {
+                padding: 20px 10px;
+            }
+            
+            .error-nav-btn .btn-icon {
+                font-size: 28px;
+            }
+            
+            .mini-game-container {
+                width: 250px;
+                height: 80px;
+            }
+            
+            .mini-chicken {
+                font-size: 24px;
+            }
+            
+            .mini-obstacle {
+                font-size: 20px;
+                left: 250px;
+            }
+            
+            .social-links-404 {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .argentina-flag {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .suggestion-tags {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .error-404-description {
+                padding: 20px;
+                margin: 20px 0;
+            }
+        }
+
+        /* Game animations */
+        @keyframes chickenJump {
+            0% { bottom: 0px; }
+            50% { bottom: 40px; }
+            100% { bottom: 0px; }
+        }
+
+        @keyframes fadeUpOut {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-30px); }
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-110vh) rotate(720deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        .shell {
+            max-width: 940px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+     
+        <header id="header" class="header">
+            <div class="header__top">
+                <a href="#" class="btn-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            
+            <div class="header__inner">
+                <div class="header__middle">
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="/" class="nuxt-link-active"><span>Inicio</span></a></li>
+                            <li><a href="nosotros.html"><span>Nosotros</span></a></li>
+                            <li><a href="juego.html"><span>El Juego</span></a></li>
+                            <li><a href="servicios.html"><span>Servicios</span></a></li>
+                            <li><a href="noticias.html"><span>Noticias</span></a></li>
+                            <li><a href="contacto.html"><span>Contactanos</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="header__bottom">
+                    <a href="/"><img src="/images/logo.png" alt="Runaway Chicken Argentina logo" width="48" height="48"></a>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+          
+
+            <!-- 404 Error Page -->
+            <section class="error-404-section">
+                <div class="shell">
+                    <div class="error-404-container">
+                        
+                        <!-- Animated 404 Number -->
+                        <div class="error-404-number">
+                            <span class="digit-4 bounce-1">4</span>
+                            <span class="digit-0 bounce-2">
+                                <div class="chicken-icon">🐔</div>
+                            </span>
+                            <span class="digit-4 bounce-3">4</span>
+                        </div>
+
+                        <!-- Error Message -->
+                        <div class="error-404-content">
+                            <h1 class="error-404-title">¡Nuestro Pollo Se Perdió!</h1>
+                            <p class="error-404-subtitle">
+                                Parece que la página que buscás escapó como nuestro pollo valiente. 
+                                ¡Pero no te preocupes, te ayudamos a encontrar el camino de vuelta!
+                            </p>
+                            
+                        </div>
+
+                        <!-- Quick Navigation -->
+                        <div class="error-404-navigation">
+                            <a href="/" class="error-nav-btn home-btn">
+                                <div class="btn-icon">🏠</div>
+                                <span>Inicio</span>
+                                <small>Volver al inicio</small>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__body">
+                <div class="shell">
+                    <div class="footer__nav">
+                        <div class="footer__columns">
+                            <div class="footer__col">
+                                <ul>
+                                    <li><h4 class="footer__title">Menú</h4></li>
+                                    <li><a href="/"><span>Inicio</span></a></li>
+                                    <li><a href="nosotros.html"><span>Nosotros</span></a></li>
+                                    <li><a href="juego.html"><span>El Juego</span></a></li>
+                                    <li><a href="servicios.html"><span>Servicios</span></a></li>
+                                    <li><a href="noticias.html"><span>Noticias</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="footer__col">
+                                <ul>
+                                    <li><h4 class="footer__title">Juego</h4></li>
+                                    <li><a href="juego.html"><span>Runaway Chicken</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="footer__col">
+                                <ul>
+                                    <li><h4 class="footer__title">Otros Enlaces</h4></li>
+                                    <li><a href="politica-privacidad.html"><span>Política de Privacidad</span></a></li>
+                                    <li><a href="terminos.html"><span>Términos y Condiciones</span></a></li>
+                                    <li><a href="contacto.html"><span>Contactanos</span></a></li>
+                                    <li><a href="https://play.google.com/store/apps/details?id=com.udarstudio.chickenrun" target="_blank" rel="nofollow"><span>Google Play Store</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="socials socials--small">
+                        <ul>
+                            <li><a href="https://play.google.com/store/apps/details?id=com.udarstudio.chickenrun"><img src="/images/gplay-icon-white.svg" width="32" height="32" alt="Google Play" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://apps.apple.com/us/app/runaway-chick/id6477134175"><img src="/images/apple-logo-white.svg" width="32" height="32" alt="Apple App Store" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://www.amazon.com/UdarStudio-Runaway-Chick/dp/B0D5DL233R/"><img src="/images/amazon.svg" width="32" height="32" alt="Amazon App Store" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://appgallery.huawei.com/app/C111121603"><img src="/images/huawei-logo.svg" width="32" height="32" alt="Huawei App Gallery" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://global.app.mi.com/details?lo=ES&la=en_US&id=com.udarstudio.chickenrun"><img src="/images/xiaomi-icon.svg" width="32" height="32" alt="Xiaomi Mi App Mall" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://runaway-chick-epic-cartoon.en.aptoide.com/app"><img src="/images/aptoide-icon.svg" width="32" height="32" alt="Aptoide" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://gx.games/games/1ia91x/runaway-chick-demo/"><img src="/images/operagx-icon.svg" width="32" height="32" alt="GX.GAMES" target="_blank" rel="nofollow"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bar">
+                <div class="shell">© Runaway Chicken Argentina <span id="js-get-year">2024</span></div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        
+       
+        
+        function jumpChicken() {
+            if (!gameActive) return;
+            
+            const chicken = document.getElementById('miniChicken');
+            chicken.style.animation = 'chickenJump 0.6s ease-out';
+            
+            setTimeout(() => {
+                chicken.style.animation = '';
+            }, 600);
+        }
+      
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

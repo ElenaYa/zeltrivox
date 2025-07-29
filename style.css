@@ -1107,6 +1107,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .article--center {
     text-align: center;
+    padding-top: 160px;
 }
 
 /* News Articles */

@@ -39,19 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerHeight = 100; // Account for fixed header
-                const targetPosition = target.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                header.classList.remove('active');
-                body.classList.remove('menu-open');
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerHeight = 100; // Account for fixed header
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    header.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
             }
         });
     });
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // // Sweet Bonanza-style particle effects
+    // Sweet Bonanza-style particle effects
     // function createParticle() {
     //     const particles = ['🐔', '🥚', '🌟', '🎮', '🍭', '🌈', '💎', '🎯', '🏆', '⭐'];
     //     const particle = document.createElement('div');
@@ -152,9 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //     particle.style.zIndex = '1';
     //     particle.style.opacity = '0.7';
     //     particle.style.animation = `floatUp ${Math.random() * 3 + 4}s linear forwards`;
-        
     //     document.body.appendChild(particle);
-        
     //     setTimeout(() => {
     //         if (particle.parentNode) {
     //             particle.remove();
@@ -178,30 +177,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Create particles periodically (reduced frequency for performance)
-    setInterval(createParticle, 4000);
     
-    // Chicken Road-style floating elements
-    function createFloatingElement() {
-        const elements = ['🚜', '🌾', '🏡', '🌽', '🌻', '🐣'];
-        const element = document.createElement('div');
-        element.textContent = elements[Math.floor(Math.random() * elements.length)];
-        element.style.position = 'fixed';
-        element.style.left = '-50px';
-        element.style.top = Math.random() * 70 + 15 + 'vh';
-        element.style.fontSize = Math.random() * 15 + 20 + 'px';
-        element.style.pointerEvents = 'none';
-        element.style.zIndex = '1';
-        element.style.opacity = '0.4';
-        element.style.animation = `floatAcross ${Math.random() * 10 + 15}s linear forwards`;
+    // // Chicken Road-style floating elements
+    // function createFloatingElement() {
+    //     const elements = ['🚜', '🌾', '🏡', '🌽', '🌻', '🐣'];
+    //     const element = document.createElement('div');
+    //     element.textContent = elements[Math.floor(Math.random() * elements.length)];
+    //     element.style.position = 'fixed';
+    //     element.style.left = '-50px';
+    //     element.style.top = Math.random() * 70 + 15 + 'vh';
+    //     element.style.fontSize = Math.random() * 15 + 20 + 'px';
+    //     element.style.pointerEvents = 'none';
+    //     element.style.zIndex = '1';
+    //     element.style.opacity = '0.4';
+    //     element.style.animation = `floatAcross ${Math.random() * 10 + 15}s linear forwards`;
         
-        document.body.appendChild(element);
+    //     document.body.appendChild(element);
         
-        setTimeout(() => {
-            if (element.parentNode) {
-                element.remove();
-            }
-        }, 25000);
-    }
+    //     setTimeout(() => {
+    //         if (element.parentNode) {
+    //             element.remove();
+    //         }
+    //     }, 25000);
+    // }
     
     // Add CSS for floating animation
     if (!document.querySelector('#floating-styles')) {
@@ -219,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Create floating elements less frequently
-    setInterval(createFloatingElement, 8000);
+    // setInterval(createFloatingElement, 8000);
     
     // Scroll effects for header
     let lastScrollTop = 0;
@@ -490,76 +488,69 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Console message for developers
-    console.log(`
-    🐔 ¡Bienvenido a Runaway Chicken Argentina! 🇦🇷
-    
-    Desarrollado con amor en Buenos Aires
-    Sweet Bonanza + Chicken Road styling
-    
-    ¿Sos desarrollador? ¡Contactanos!
-    Email: dev@runawaychicken.com.ar
-    
-    Probá el código Konami para una sorpresa... 😉
-    `);
-    
-    // Initialize any additional third-party libraries
-    // Add Google Analytics, Facebook Pixel, etc. here if needed
-    
-    console.log('🎮 Runaway Chicken Argentina initialized successfully!');
+  
+});
+
+// Удаляем все плавающие элементы с анимацией floatAcross
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('div').forEach(el => {
+        if (el.style && el.style.animation && el.style.animation.includes('floatAcross')) {
+            el.remove();
+        }
+    });
 });
 
 // Export functions for potential use in other scripts
-window.RunawayChickenAR = {
-    createParticle: function() {
-        // Manually trigger particle creation
-        const particles = ['🐔', '🥚', '🌟', '🎮', '🍭'];
-        const particle = document.createElement('div');
-        particle.textContent = particles[Math.floor(Math.random() * particles.length)];
-        particle.style.position = 'fixed';
-        particle.style.left = Math.random() * 100 + 'vw';
-        particle.style.top = '100vh';
-        particle.style.fontSize = '25px';
-        particle.style.pointerEvents = 'none';
-        particle.style.zIndex = '1';
-        particle.style.animation = 'floatUp 4s linear forwards';
+// window.RunawayChickenAR = {
+//     createParticle: function() {
+//         // Manually trigger particle creation
+//         const particles = ['🐔', '🥚', '🌟', '🎮', '🍭'];
+//         const particle = document.createElement('div');
+//         particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+//         particle.style.position = 'fixed';
+//         particle.style.left = Math.random() * 100 + 'vw';
+//         particle.style.top = '100vh';
+//         particle.style.fontSize = '25px';
+//         particle.style.pointerEvents = 'none';
+//         particle.style.zIndex = '1';
+//         particle.style.animation = 'floatUp 4s linear forwards';
         
-        document.body.appendChild(particle);
+//         document.body.appendChild(particle);
         
-        setTimeout(() => {
-            if (particle.parentNode) {
-                particle.remove();
-            }
-        }, 4000);
-    },
+//         setTimeout(() => {
+//             if (particle.parentNode) {
+//                 particle.remove();
+//             }
+//         }, 4000);
+//     },
     
-    showSuccessMessage: function(message) {
-        const toast = document.createElement('div');
-        toast.textContent = message || '¡Éxito! 🎉';
-        toast.style.position = 'fixed';
-        toast.style.top = '20px';
-        toast.style.right = '20px';
-        toast.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
-        toast.style.color = 'white';
-        toast.style.padding = '15px 25px';
-        toast.style.borderRadius = '10px';
-        toast.style.zIndex = '10000';
-        toast.style.fontWeight = 'bold';
-        toast.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
-        toast.style.animation = 'slideInRight 0.5s ease-out';
+//     showSuccessMessage: function(message) {
+//         const toast = document.createElement('div');
+//         toast.textContent = message || '¡Éxito! 🎉';
+//         toast.style.position = 'fixed';
+//         toast.style.top = '20px';
+//         toast.style.right = '20px';
+//         toast.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
+//         toast.style.color = 'white';
+//         toast.style.padding = '15px 25px';
+//         toast.style.borderRadius = '10px';
+//         toast.style.zIndex = '10000';
+//         toast.style.fontWeight = 'bold';
+//         toast.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+//         toast.style.animation = 'slideInRight 0.5s ease-out';
         
-        document.body.appendChild(toast);
+//         document.body.appendChild(toast);
         
-        setTimeout(() => {
-            toast.style.animation = 'slideOutRight 0.5s ease-out';
-            setTimeout(() => {
-                if (toast.parentNode) {
-                    toast.remove();
-                }
-            }, 500);
-        }, 3000);
-    }
-};
+//         setTimeout(() => {
+//             toast.style.animation = 'slideOutRight 0.5s ease-out';
+//             setTimeout(() => {
+//                 if (toast.parentNode) {
+//                     toast.remove();
+//                 }
+//             }, 500);
+//         }, 3000);
+//     }
+// };
 
 // Add slide animations for toasts
 if (!document.querySelector('#toast-styles')) {
