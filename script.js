@@ -139,28 +139,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Sweet Bonanza-style particle effects
-    function createParticle() {
-        const particles = ['🐔', '🥚', '🌟', '🎮', '🍭', '🌈', '💎', '🎯', '🏆', '⭐'];
-        const particle = document.createElement('div');
-        particle.textContent = particles[Math.floor(Math.random() * particles.length)];
-        particle.style.position = 'fixed';
-        particle.style.left = Math.random() * 100 + 'vw';
-        particle.style.top = '100vh';
-        particle.style.fontSize = Math.random() * 20 + 15 + 'px';
-        particle.style.pointerEvents = 'none';
-        particle.style.zIndex = '1';
-        particle.style.opacity = '0.7';
-        particle.style.animation = `floatUp ${Math.random() * 3 + 4}s linear forwards`;
+    // // Sweet Bonanza-style particle effects
+    // function createParticle() {
+    //     const particles = ['🐔', '🥚', '🌟', '🎮', '🍭', '🌈', '💎', '🎯', '🏆', '⭐'];
+    //     const particle = document.createElement('div');
+    //     particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+    //     particle.style.position = 'fixed';
+    //     particle.style.left = Math.random() * 100 + 'vw';
+    //     particle.style.top = '100vh';
+    //     particle.style.fontSize = Math.random() * 20 + 15 + 'px';
+    //     particle.style.pointerEvents = 'none';
+    //     particle.style.zIndex = '1';
+    //     particle.style.opacity = '0.7';
+    //     particle.style.animation = `floatUp ${Math.random() * 3 + 4}s linear forwards`;
         
-        document.body.appendChild(particle);
+    //     document.body.appendChild(particle);
         
-        setTimeout(() => {
-            if (particle.parentNode) {
-                particle.remove();
-            }
-        }, 7000);
-    }
+    //     setTimeout(() => {
+    //         if (particle.parentNode) {
+    //             particle.remove();
+    //         }
+    //     }, 7000);
+    // }
     
     // Add CSS for particle animation if not exists
     if (!document.querySelector('#particle-styles')) {
