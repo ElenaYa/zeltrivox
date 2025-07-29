@@ -12,7 +12,6 @@
     <meta name="robots" content="noindex, nofollow">
     
     <style>
-        /* 404 Page Specific Styles */
         .error-404-section {
             padding: 80px 0;
             background: rgba(255, 255, 255, 0.95);
@@ -27,7 +26,6 @@
             margin: 0 auto;
         }
 
-        /* Animated 404 Number */
         .error-404-number {
             display: flex;
             justify-content: center;
@@ -94,7 +92,6 @@
             transform: scale(1.2) rotate(15deg);
         }
 
-        /* Error Content */
         .error-404-content {
             margin-bottom: 50px;
         }
@@ -128,7 +125,6 @@
             }
         }
 
-        /* Navigation Buttons */
         .error-404-navigation {
             margin-bottom: 50px;
         }
@@ -196,13 +192,11 @@
             50% { transform: translateY(-5px); }
         }
 
-        /* Specific button colors */
         .home-btn:hover { border-color: rgba(52, 152, 219, 0.6); }
         .game-btn:hover { border-color: rgba(155, 89, 182, 0.6); }
         .play-btn:hover { border-color: rgba(46, 204, 113, 0.6); }
         .news-btn:hover { border-color: rgba(241, 196, 15, 0.6); }
 
-        /* Search Section */
         .error-404-search {
             margin-bottom: 50px;
             background: rgba(255, 255, 255, 0.9);
@@ -305,7 +299,6 @@
             box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
         }
 
-        /* Mini Game */
         .error-404-game {
             margin-bottom: 50px;
             background: linear-gradient(135deg, #E6E6FA, #DDA0DD);
@@ -424,7 +417,6 @@
             margin: 0 auto;
         }
 
-        /* Social Media Links */
         .error-404-social {
             margin-bottom: 30px;
         }
@@ -469,7 +461,6 @@
         .social-404-btn.instagram:hover { border-color: #E4405F; background: rgba(228, 64, 95, 0.1); }
         .social-404-btn.tiktok:hover { border-color: #000000; background: rgba(0, 0, 0, 0.1); }
 
-        /* Basic body styling */
         body {
             font-family: "Comic Sans MS", cursive, sans-serif;
             background: linear-gradient(45deg, #FFD700, #FF69B4, #87CEEB, #98FB98, #FFA500, #DDA0DD);
@@ -488,7 +479,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Basic responsive */
         @media (max-width: 768px) {
             .error-404-section {
                 padding: 40px 0;
@@ -548,7 +538,6 @@
             }
         }
 
-        /* Game animations */
         @keyframes chickenJump {
             0% { bottom: 0px; }
             50% { bottom: 40px; }
@@ -576,6 +565,15 @@
 </head>
 
 <body>
+    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;width:100vw;z-index:9999;background:rgba(44,24,16,0.98);color:#fff;padding:24px 16px 16px 16px;box-shadow:0 -4px 24px rgba(0,0,0,0.15);font-size:18px;line-height:1.5;">
+        <div style="max-width:700px;margin:0 auto;display:flex;flex-direction:column;align-items:center;">
+          <span style="margin-bottom:12px;">Utilizamos cookies para mejorar el funcionamiento del sitio y analizar el tráfico. Al continuar navegando, aceptás nuestra <a href='politica-privacidad.html' style='color:#FFD700;text-decoration:underline;'>Política de Privacidad</a>.</span>
+          <div style="display:flex;gap:16px;">
+            <button id="cookie-accept" style="background:#FFD700;color:#2C1810;padding:10px 28px;border:none;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer;">Aceptar</button>
+            <button id="cookie-decline" style="background:#fff;color:#2C1810;padding:10px 28px;border:none;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer;">Rechazar</button>
+          </div>
+        </div>
+      </div>
     <div class="wrapper">
      
         <header id="header" class="header">
@@ -602,19 +600,17 @@
                 </div>
                 
                 <div class="header__bottom">
-                    <a href="/"><img src="/images/logo.png" alt="Runaway Chicken Argentina logo" width="48" height="48"></a>
+                    <a href="/"><img src="images/logo.png" alt="Runaway Chicken Argentina logo" width="48" height="48"></a>
                 </div>
             </div>
         </header>
         <main class="main">
           
 
-            <!-- 404 Error Page -->
             <section class="error-404-section">
                 <div class="shell">
                     <div class="error-404-container">
                         
-                        <!-- Animated 404 Number -->
                         <div class="error-404-number">
                             <span class="digit-4 bounce-1">4</span>
                             <span class="digit-0 bounce-2">
@@ -623,7 +619,6 @@
                             <span class="digit-4 bounce-3">4</span>
                         </div>
 
-                        <!-- Error Message -->
                         <div class="error-404-content">
                             <h1 class="error-404-title">¡Nuestro Pollo Se Perdió!</h1>
                             <p class="error-404-subtitle">
@@ -633,7 +628,6 @@
                             
                         </div>
 
-                        <!-- Quick Navigation -->
                         <div class="error-404-navigation">
                             <a href="/" class="error-nav-btn home-btn">
                                 <div class="btn-icon">🏠</div>
@@ -681,13 +675,13 @@
                     
                     <div class="socials socials--small">
                         <ul>
-                            <li><a href="https://play.google.com/store/apps/details?id=com.udarstudio.chickenrun"><img src="/images/gplay-icon-white.svg" width="32" height="32" alt="Google Play" target="_blank" rel="nofollow"></a></li>
-                            <li><a href="https://apps.apple.com/us/app/runaway-chick/id6477134175"><img src="/images/apple-logo-white.svg" width="32" height="32" alt="Apple App Store" target="_blank" rel="nofollow"></a></li>
-                            <li><a href="https://www.amazon.com/UdarStudio-Runaway-Chick/dp/B0D5DL233R/"><img src="/images/amazon.svg" width="32" height="32" alt="Amazon App Store" target="_blank" rel="nofollow"></a></li>
-                            <li><a href="https://appgallery.huawei.com/app/C111121603"><img src="/images/huawei-logo.svg" width="32" height="32" alt="Huawei App Gallery" target="_blank" rel="nofollow"></a></li>
-                            <li><a href="https://global.app.mi.com/details?lo=ES&la=en_US&id=com.udarstudio.chickenrun"><img src="/images/xiaomi-icon.svg" width="32" height="32" alt="Xiaomi Mi App Mall" target="_blank" rel="nofollow"></a></li>
-                            <li><a href="https://runaway-chick-epic-cartoon.en.aptoide.com/app"><img src="/images/aptoide-icon.svg" width="32" height="32" alt="Aptoide" target="_blank" rel="nofollow"></a></li>
-                            <li><a href="https://gx.games/games/1ia91x/runaway-chick-demo/"><img src="/images/operagx-icon.svg" width="32" height="32" alt="GX.GAMES" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://play.google.com/store/apps/details?id=com.udarstudio.chickenrun"><img src="images/gplay-icon-white.svg" width="32" height="32" alt="Google Play" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://apps.apple.com/us/app/runaway-chick/id6477134175"><img src="images/apple-logo-white.svg" width="32" height="32" alt="Apple App Store" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://www.amazon.com/UdarStudio-Runaway-Chick/dp/B0D5DL233R/"><img src="images/amazon.svg" width="32" height="32" alt="Amazon App Store" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://appgallery.huawei.com/app/C111121603"><img src="images/huawei-logo.svg" width="32" height="32" alt="Huawei App Gallery" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://global.app.mi.com/details?lo=ES&la=en_US&id=com.udarstudio.chickenrun"><img src="images/xiaomi-icon.svg" width="32" height="32" alt="Xiaomi Mi App Mall" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://runaway-chick-epic-cartoon.en.aptoide.com/app"><img src="images/aptoide-icon.svg" width="32" height="32" alt="Aptoide" target="_blank" rel="nofollow"></a></li>
+                            <li><a href="https://gx.games/games/1ia91x/runaway-chick-demo/"><img src="images/operagx-icon.svg" width="32" height="32" alt="GX.GAMES" target="_blank" rel="nofollow"></a></li>
                         </ul>
                     </div>
                 </div>

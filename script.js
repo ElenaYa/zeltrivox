@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Update copyright year
     const yearElement = document.getElementById('js-get-year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
     
-    // Mobile Menu Functionality
     const menuButton = document.querySelector('.btn-menu');
     const header = document.querySelector('.header');
     const body = document.body;
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
             body.classList.toggle('menu-open');
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!header.contains(e.target) && !menuButton.contains(e.target)) {
                 header.classList.remove('active');
@@ -26,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Close menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 header.classList.remove('active');
@@ -35,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -43,13 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (href && href !== '#') {
                 const target = document.querySelector(href);
                 if (target) {
-                    const headerHeight = 100; // Account for fixed header
+                    const headerHeight = 100; 
                     const targetPosition = target.offsetTop - headerHeight;
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
-                    // Close mobile menu if open
                     header.classList.remove('active');
                     body.classList.remove('menu-open');
                 }
@@ -57,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Initialize Swiper for main hero slider
     const mainSwiper = document.querySelector('.js-swiper-main');
     if (mainSwiper && typeof Swiper !== 'undefined') {
         new Swiper('.js-swiper-main', {
@@ -78,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize horizontal swipers for game screenshots
     const horizontalSwipers = document.querySelectorAll('.js-swiper-hor');
     horizontalSwipers.forEach(swiperEl => {
         if (typeof Swiper !== 'undefined') {
@@ -109,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Initialize regular swipers
     const regularSwipers = document.querySelectorAll('.js-swiper:not(.js-swiper-main):not(.js-swiper-hor)');
     regularSwipers.forEach(swiperEl => {
         if (typeof Swiper !== 'undefined') {
@@ -139,29 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    
-    // Sweet Bonanza-style particle effects
-    // function createParticle() {
-    //     const particles = ['🐔', '🥚', '🌟', '🎮', '🍭', '🌈', '💎', '🎯', '🏆', '⭐'];
-    //     const particle = document.createElement('div');
-    //     particle.textContent = particles[Math.floor(Math.random() * particles.length)];
-    //     particle.style.position = 'fixed';
-    //     particle.style.left = Math.random() * 100 + 'vw';
-    //     particle.style.top = '100vh';
-    //     particle.style.fontSize = Math.random() * 20 + 15 + 'px';
-    //     particle.style.pointerEvents = 'none';
-    //     particle.style.zIndex = '1';
-    //     particle.style.opacity = '0.7';
-    //     particle.style.animation = `floatUp ${Math.random() * 3 + 4}s linear forwards`;
-    //     document.body.appendChild(particle);
-    //     setTimeout(() => {
-    //         if (particle.parentNode) {
-    //             particle.remove();
-    //         }
-    //     }, 7000);
-    // }
-    
-    // Add CSS for particle animation if not exists
+
     if (!document.querySelector('#particle-styles')) {
         const style = document.createElement('style');
         style.id = 'particle-styles';
@@ -176,32 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(style);
     }
     
-    // Create particles periodically (reduced frequency for performance)
-    
-    // // Chicken Road-style floating elements
-    // function createFloatingElement() {
-    //     const elements = ['🚜', '🌾', '🏡', '🌽', '🌻', '🐣'];
-    //     const element = document.createElement('div');
-    //     element.textContent = elements[Math.floor(Math.random() * elements.length)];
-    //     element.style.position = 'fixed';
-    //     element.style.left = '-50px';
-    //     element.style.top = Math.random() * 70 + 15 + 'vh';
-    //     element.style.fontSize = Math.random() * 15 + 20 + 'px';
-    //     element.style.pointerEvents = 'none';
-    //     element.style.zIndex = '1';
-    //     element.style.opacity = '0.4';
-    //     element.style.animation = `floatAcross ${Math.random() * 10 + 15}s linear forwards`;
-        
-    //     document.body.appendChild(element);
-        
-    //     setTimeout(() => {
-    //         if (element.parentNode) {
-    //             element.remove();
-    //         }
-    //     }, 25000);
-    // }
-    
-    // Add CSS for floating animation
     if (!document.querySelector('#floating-styles')) {
         const style = document.createElement('style');
         style.id = 'floating-styles';
@@ -216,10 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(style);
     }
     
-    // Create floating elements less frequently
-    // setInterval(createFloatingElement, 8000);
-    
-    // Scroll effects for header
+   
     let lastScrollTop = 0;
     const scrollThreshold = 100;
     
@@ -242,18 +182,15 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
     
-    // Form handling
     const contactForm = document.querySelector('.form-contacts');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // Add loading state
             const submitBtn = contactForm.querySelector('input[type="submit"]');
             if (submitBtn) {
                 submitBtn.value = 'Enviando...';
                 submitBtn.disabled = true;
             }
             
-            // Add success/error handling here if needed
             setTimeout(() => {
                 if (submitBtn) {
                     submitBtn.value = 'Enviar Consulta';
@@ -262,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         });
         
-        // Form validation
         const requiredFields = contactForm.querySelectorAll('[required]');
         requiredFields.forEach(field => {
             field.addEventListener('blur', function() {
@@ -277,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Intersection Observer for animations
     if ('IntersectionObserver' in window) {
         const observerOptions = {
             threshold: 0.1,
@@ -290,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                     
-                    // Add special effects for certain elements
                     if (entry.target.classList.contains('value-card')) {
                         entry.target.style.animation = 'bounceIn 0.8s ease-out';
                     }
@@ -302,7 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, observerOptions);
         
-        // Observe elements for animation
         const animatedElements = document.querySelectorAll('.value-card, .team-member, .article-news, .info-card');
         animatedElements.forEach(el => {
             el.style.opacity = '0';
@@ -311,7 +244,6 @@ document.addEventListener('DOMContentLoaded', function() {
             observer.observe(el);
         });
         
-        // Add animation keyframes
         if (!document.querySelector('#animation-styles')) {
             const style = document.createElement('style');
             style.id = 'animation-styles';
@@ -342,7 +274,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Add hover effects to buttons
     const buttons = document.querySelectorAll('.btn, .btn-small, .btn-link');
     buttons.forEach(button => {
         button.addEventListener('mouseenter', function() {
@@ -354,11 +285,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add special effects to CTA button
     const ctaButtons = document.querySelectorAll('.cta-main-btn');
     ctaButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            // Create ripple effect
             const ripple = document.createElement('div');
             ripple.style.position = 'absolute';
             ripple.style.borderRadius = '50%';
@@ -378,7 +307,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add ripple animation
     if (!document.querySelector('#ripple-styles')) {
         const style = document.createElement('style');
         style.id = 'ripple-styles';
@@ -393,7 +321,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(style);
     }
     
-    // Performance optimization: Lazy loading for images
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -412,9 +339,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lazyImages.forEach(img => imageObserver.observe(img));
     }
     
-    // Easter egg: Konami code for special Argentine effect
     let konamiCode = [];
-    const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+    const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; 
     
     document.addEventListener('keydown', function(e) {
         konamiCode.push(e.keyCode);
@@ -433,10 +359,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (isMatch) {
-                // Special Argentine celebration effect
                 document.body.style.background = 'linear-gradient(45deg, #74ACDF, #FFF, #74ACDF)';
                 
-                // Create Argentine flag particles
                 for (let i = 0; i < 20; i++) {
                     setTimeout(() => {
                         const flag = document.createElement('div');
@@ -459,7 +383,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, i * 100);
                 }
                 
-                // Show special message
                 const message = document.createElement('div');
                 message.textContent = '¡VAMOS ARGENTINA! 🇦🇷⚽🏆';
                 message.style.position = 'fixed';
@@ -491,7 +414,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
 });
 
-// Удаляем все плавающие элементы с анимацией floatAcross
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('div').forEach(el => {
         if (el.style && el.style.animation && el.style.animation.includes('floatAcross')) {
@@ -499,60 +421,23 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    var cookieBanner = document.getElementById('cookie-banner');
+    var cookieAccepted = localStorage.getItem('cookieConsent');
+    if (!cookieAccepted) {
+      cookieBanner.style.display = 'block';
+    }
+    document.getElementById('cookie-accept').onclick = function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieBanner.style.display = 'none';
+    };
+    document.getElementById('cookie-decline').onclick = function() {
+      localStorage.setItem('cookieConsent', 'declined');
+      cookieBanner.style.display = 'none';
+    };
+  });
 
-// Export functions for potential use in other scripts
-// window.RunawayChickenAR = {
-//     createParticle: function() {
-//         // Manually trigger particle creation
-//         const particles = ['🐔', '🥚', '🌟', '🎮', '🍭'];
-//         const particle = document.createElement('div');
-//         particle.textContent = particles[Math.floor(Math.random() * particles.length)];
-//         particle.style.position = 'fixed';
-//         particle.style.left = Math.random() * 100 + 'vw';
-//         particle.style.top = '100vh';
-//         particle.style.fontSize = '25px';
-//         particle.style.pointerEvents = 'none';
-//         particle.style.zIndex = '1';
-//         particle.style.animation = 'floatUp 4s linear forwards';
-        
-//         document.body.appendChild(particle);
-        
-//         setTimeout(() => {
-//             if (particle.parentNode) {
-//                 particle.remove();
-//             }
-//         }, 4000);
-//     },
-    
-//     showSuccessMessage: function(message) {
-//         const toast = document.createElement('div');
-//         toast.textContent = message || '¡Éxito! 🎉';
-//         toast.style.position = 'fixed';
-//         toast.style.top = '20px';
-//         toast.style.right = '20px';
-//         toast.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
-//         toast.style.color = 'white';
-//         toast.style.padding = '15px 25px';
-//         toast.style.borderRadius = '10px';
-//         toast.style.zIndex = '10000';
-//         toast.style.fontWeight = 'bold';
-//         toast.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
-//         toast.style.animation = 'slideInRight 0.5s ease-out';
-        
-//         document.body.appendChild(toast);
-        
-//         setTimeout(() => {
-//             toast.style.animation = 'slideOutRight 0.5s ease-out';
-//             setTimeout(() => {
-//                 if (toast.parentNode) {
-//                     toast.remove();
-//                 }
-//             }, 500);
-//         }, 3000);
-//     }
-// };
 
-// Add slide animations for toasts
 if (!document.querySelector('#toast-styles')) {
     const style = document.createElement('style');
     style.id = 'toast-styles';

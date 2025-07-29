@@ -1,14 +1,3 @@
-/**
- * Swiper 8.3.2
- * Most modern mobile touch slider and framework with hardware accelerated transitions
- * https://swiperjs.com
- *
- * Copyright 2014-2022 Vladimir Kharlampidi
- *
- * Released under the MIT License
- *
- * Released on: July 26, 2022
- */
 
 !function(e, t) {
     "object" == typeof exports && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (e = "undefined" != typeof globalThis ? globalThis : e || self).Swiper = t()
@@ -2208,7 +2197,7 @@
                 !e || "container" === t && !s)
                     return;
                 let a = !1;
-                const i = r()
+            const i = r()
                   , n = "window" === t ? i.innerHeight : s.clientHeight
                   , l = Object.keys(e).map((e => {
                     if ("string" == typeof e && 0 === e.indexOf("@")) {
@@ -2439,7 +2428,7 @@
             const e = this;
             if (!e.params._emitClasses || !e.el)
                 return;
-            const t = [];
+                const t = [];
             e.slides.each((s => {
                 const a = e.getSlideClasses(s);
                 t.push({
@@ -2679,7 +2668,7 @@
             for (let t = 0; t < e.length; t += 1)
                 e[t] && a.prepend(e[t]);
             r = i + e.length
-        } else
+            } else
             a.prepend(e);
         s.loop && t.loopCreate(),
         s.observer || t.update(),
@@ -2708,7 +2697,7 @@
             for (let e = 0; e < t.length; e += 1)
                 t[e] && a.append(t[e]);
             o = n > e ? n + t.length : n
-        } else
+            } else
             a.append(t);
         for (let e = 0; e < d.length; e += 1)
             a.append(d[e]);
@@ -2826,10 +2815,10 @@
     Object.keys(q).forEach((e => {
         Object.keys(q[e]).forEach((t => {
             V.prototype[t] = q[e][t]
-        }
-        ))
-    }
-    )),
+                }
+                ))
+            }
+            )),
     V.use([function(e) {
         let {swiper: t, on: s, emit: a} = e;
         const i = r();
@@ -3148,7 +3137,7 @@
                         }
                     }
                     if (!e)
-                        return
+                    return
                 }
                 t.isHorizontal() ? ((d || c || p || u) && (a.preventDefault ? a.preventDefault() : a.returnValue = !1),
                 ((c || u) && !s || (d || p) && s) && t.slideNext(),
@@ -3227,7 +3216,7 @@
             let s = e
               , a = !0;
             if (!t.enabled)
-                return;
+                    return;
             const r = t.params.mousewheel;
             t.params.cssMode && s.preventDefault();
             let n = t.$el;
@@ -4150,7 +4139,7 @@
             c = !1,
             !s.gestures) {
                 if ("touchstart" !== e.type || "touchstart" === e.type && e.targetTouches.length < 2)
-                    return;
+                return;
                 o = !0,
                 m.scaleStart = w(e)
             }
@@ -4412,7 +4401,7 @@
             t.zoom.enabled && function() {
                 const e = t.zoom;
                 if (!m.$imageEl || 0 === m.$imageEl.length)
-                    return;
+                return;
                 if (!f.isTouched || !f.isMoved)
                     return f.isTouched = !1,
                     void (f.isMoved = !1);
@@ -4519,7 +4508,7 @@
                             const e = r.attr("data-swiper-slide-index");
                             if (r.hasClass(t.params.slideDuplicateClass)) {
                                 o(t.$wrapperEl.children(`[data-swiper-slide-index="${e}"]:not(.${t.params.slideDuplicateClass})`).index(), !1)
-                            } else {
+                    } else {
                                 o(t.$wrapperEl.children(`.${t.params.slideDuplicateClass}[data-swiper-slide-index="${e}"]`).index(), !1)
                             }
                         }
@@ -4540,7 +4529,7 @@
             function p(t) {
                 if (r) {
                     if (e.children(`.${s.slideClass}[data-swiper-slide-index="${t}"]`).length)
-                        return !0
+            return !0
                 } else if (a[t])
                     return !0;
                 return !1
@@ -4893,7 +4882,7 @@
         a("fromEdge toEdge afterInit lock unlock", ( () => {
             t.params.a11y.enabled && function() {
                 if (t.params.loop || t.params.rewind || !t.navigation)
-                    return;
+                return;
                 const {$nextEl: e, $prevEl: s} = t.navigation;
                 s && s.length > 0 && (t.isBeginning ? (u(s),
                 l(s)) : (h(s),
@@ -5047,7 +5036,7 @@
             if (e !== t.slides.eq(t.activeIndex).attr("data-hash")) {
                 const s = t.$wrapperEl.children(`.${t.params.slideClass}[data-hash="${e}"]`).index();
                 if (void 0 === s)
-                    return;
+                return;
                 t.slideTo(s)
             }
         }
@@ -5067,7 +5056,7 @@
         n("init", ( () => {
             t.params.hashNavigation.enabled && ( () => {
                 if (!t.params.hashNavigation.enabled || t.params.history && t.params.history.enabled)
-                    return;
+                return;
                 l = !0;
                 const e = o.location.hash.replace("#", "");
                 if (e) {
